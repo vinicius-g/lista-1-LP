@@ -1,26 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    int num, fat;
+    int num, fat, contador;
     printf("Insira um numero:");
-    scanf("%d", &num);
 
-    if (num < 0) {
-        printf("O numero nao pode ser negativo!");
-        return 0;
-    }
+    do {
+        scanf("%d", &num);
+        if (num < 0) {
+            printf("O numero nao pode ser negativo!\n Digite outro numero:");
+        }
+    } while(num < 0);
 
-    if (num > 0) {
-        fat = num;
-    }
+    fat = 1;
 
-    if (num == 0) {
-        fat = 1;
-    }
-
-    for (int contador = num; contador > 1; contador--) {
-        num = num - 1;
-        fat = fat * num;
+    for (contador = num; contador > 1; contador--) {
+        fat = fat * contador;
     }
 
     printf("O fatorial de %d equivale a: %d", num, fat);

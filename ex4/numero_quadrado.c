@@ -1,11 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int num, numQuadrado = 0;
+    int num, numQuadrado = 0, contador;
     printf("Insira um numero:");
     scanf("%d", &num);
 
-    for (int contador = num; contador > 0; contador--) {
+    if (num < 0) {
+        num = num * -1;
+    }
+
+    for (contador = num; contador > 0; contador--) {
         numQuadrado = numQuadrado + num;
     }
 

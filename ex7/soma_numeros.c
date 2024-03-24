@@ -2,8 +2,14 @@
 
 int main() {
     int num, numInicial, somaTotal = 0;
-    printf("Insira um numero:");
-    scanf("%d", &num);
+    printf("Insira um numero natural:");
+
+    do {
+        scanf("%d", &num);
+        if (num < 0) {
+            printf("Informe um numero maior que 0:\n");
+        }
+    } while(num < 0);
 
     numInicial = num;
 
@@ -12,5 +18,5 @@ int main() {
         num--;
     }
 
-    printf("A soma dos %d numeros naturais equivale a: %d", numInicial, somaTotal);
+    printf("A soma dos %d primeiros numeros naturais equivale a: %d", numInicial, somaTotal);
 }
