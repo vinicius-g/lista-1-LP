@@ -1,0 +1,90 @@
+COMO RESOLVER
+
+Conversor de Temperatura: Converta uma temperatura dada em Celsius para Fahrenheit.
+
+1° passo: Identificar as variáveis
+
+Lendo o enunciado temos que tentar encontrar dados de entrada e dados de saída, nesse exercício podemos observar que temos a ENTRADA de um valor em Celsius e uma SAÍDA em Fahrenheit, e como são essas as informações, vamos criar essas variáveis.
+Vamos tentar definir também o tipo dessas variáveis, Celsius e Fahrenheit são valor númericos, e além disso também são valores racionais, ou seja, não são números inteiros, podem ser por exemplo "23.5", que é um número com vírgula.
+
+OBS: Na programação números decimais são representados com "." ao invés da ",", porque é usado o sistema de medidas dos Estados Unidos.
+
+Para definir valor racionais, utilizamos: "float", abaixo o exemplo de como ficaram nossas variáveis:
+
+float c, f; <- ";" é obrigatório no final de todas as linhas
+
+2° passo: Encontrar uma forma de resolver isso
+
+Vamos trazer esse problema para o mundo real, basicamente o que precisa ser feito é converter de uma temperatura para outra, felizmente para isso vamos apenas aplicar a formula:
+
+Fahrenheit = (Celsius * 1.8) + 32
+
+E pronto, passando os valores para essa fórmula nós resolvemos o problema.
+
+3° passo: Implementar a resolução(algoritmo)
+
+A resolução dessa problema e ao resultado final do que estamos fazendo, vamos dar o nome de algoritmo, que por definição é:
+
+Algoritmo: descrição de um padrão de comportamento expressado em termos de um repertório de ações primitivas e executáveis. Um algoritmo é sempre imperativo, podem ser executados em tempo finito e são determinísticos (sempre vão dar o mesmo resultado se vc entrar com os mesmos valores, como uma receita).
+
+Vamos colocar em etapas o que precisamos fazer agora, falar em voz alta ou escrever ajuda muito aqui:
+
+- Pegar um valor qualquer em Celsius que o usuário vai fornecer;
+- Colocar o valor em Celsius na nossa fórmula;
+- Imprimir o valor em Fahrenheit.
+
+Para pegar os valores vamos utilizar uma biblioteca, bibliotecas são códigos já feitos por outra pessoa, onde nós podemos utilizar para evitar trabalho desnecessário, a biblioteca que mais vamos utilizar vai ser a stdio.h. Para usarmos essa biblioteca no nosso código basta inserir nas primeira linha do código:
+
+#include <stdio.h>
+
+E pronto, estamos usando a biblioteca, logo após isso vamos abrir a nossa função principal, nela vamos colocar todo o nosso código:
+
+#include <stdio.h>
+
+int main() {
+    {nosso código}
+}
+
+Dentro dessas chaves vamos escrever tudo que o computador vai fazer, primeiro vamos declarar as variáveis:
+
+#include <stdio.h>
+
+int main() {
+    float c, f;
+}
+
+Depois vamos usar uma função de dentro da biblioteca stdio.h, o "scanf", que vai permitir que o usuário digite os valores para dentro das variáveis:
+
+#include <stdio.h>
+
+int main() {
+    float c, f;
+
+    scanf("%f", &c); <- Pode reparar que utilizamos "%f", isso indica para o computador que estamos utilizando um valor racional, se utilizassemos por exemplo "%d", isso indicaria um número inteiro. Logo após isso utilizamos um "&", isso serve para falarmos qual a variável em que queremos colocar o valor que será digitado, no caso, "&c", indica que o valor que o usuário digitar estará dentro da variável "c".
+}
+
+Depois vamos adicionar nossa formula:
+
+#include <stdio.h>
+
+int main() {
+    float c, f;
+
+    scanf("%f", &c);
+
+    f = (c * 1.8) + 32; <- Observe que utilizamos "." ao invés da ",", e sempre colocamos ";", no final da linha.
+}
+
+E no final do código basta imprimir na tela o valor de Fahrenheit que encontramos, utilizando printf, outra função da biblioteca stdio.h:
+
+int main() {
+    float c, f;
+
+    scanf("%f", &c);
+
+    f = (c * 1.8) + 32;
+
+    printf("O valor em Fahrenheit: %.2f !", f); <- no printf nós colocamos o texto entre "", e adicionamos o mesmo sinal "%.2f", para indicar que vamos mostrar um número racional, mas nesse caso usamos o ".2", para indicar que queremos arredondar o valor para sempre possuir 2 casas decimais, e depois adicionamos a variável que nós queremos mostrar, o texto pode ser escrito na ordem que preferir.
+}
+
+E assim resolvemos o primeiro código da lista.
